@@ -25,11 +25,11 @@ def main():
 
     print("Hello and welcome to MapCompare!")
     print("Now you can find out if you are better than your friends!")
-    user_name = input("What is your name?")
-    other_name = input("Who are you comparing to today?")
+    my_name = input("What is your name? ")
+    other_name = input("Who are you comparing to today? ")
 
-    my_times = input("Please enter the list of your times produced by the server")
-    other_times = input("Please enter the list of your opponent's times produced by the server")
+    my_times = input("Please enter the list of your times produced by the server: ")
+    other_times = input("Please enter the list of your opponent's times produced by the server: ")
 
     my_list = my_times.split(" ")
     other_list = other_times.split(" ")
@@ -39,38 +39,51 @@ def main():
     i = 0               # index relative to master map list
     my_i = 0            # index relative to user map list
     other_i = 0         # index relative to opponent map list
+    my_wins = 0
+    other_wins = 0
+    my_beat = 0
+    other_beat = 0
+    both_fail = 0
+
     sum_maps = len(maps_list)
     while i < sum_maps:
-        print(maps_list[i])
-        print(my_list[my_i])
-        print(other_list[other_i])
         if (maps_list[i] == my_list[my_i]) & (maps_list[i] == other_list[other_i]):  # if both users have the current map
             my_time = datetime.strptime(my_list[my_i+2].replace(",", "0000"), "%M:%S:%f") # gets rid of a trailing comma, sets up microseconds right
             other_time = datetime.strptime(other_list[other_i+2].replace(",", "0000"), "%M:%S:%f")
-            if my_time > other_time:
-                print("They both have beaten " + maps_list[i] + " but " + user_name + " is " +
-                      datetime.strftime((datetime.combine(date.today(), my_time) -
-                                         datetime.combine(date.today(), other_time)), "%M:%S:%f")
-                      + " faster than " + other_name)
-            elif my_time <= other_time:
+            if my_time < other_time:  # remember: a smaller time is a faster one.
+                print("They both have beaten " + maps_list[i] + " but " + my_name + " is " +
+                      str(other_time - my_time) + " faster than " + other_name)
+                my_wins += 1
+
+            elif my_time >= other_time:
                 print("They both have beaten " + maps_list[i] + " but " + other_name + " is " +
-                      datetime.strftime((datetime.combine(date.today(), other_time) -
-                                         datetime.combine(date.today(), my_time)), "%M:%S:%f")
-                      + " faster than " + user_name)
+                      str(my_time - other_time) + " faster than " + my_name)
+                other_wins += 1
             my_i += 5
             other_i += 5
 
         elif maps_list[i] == my_list[my_i]:
-            print("Only " + user_name + " has beaten " + maps_list[i])
+            print("Only " + my_name + " has beaten " + maps_list[i])
             my_i += 5
+            my_beat += 1
 
         elif maps_list[i] == my_list[other_i]:
             print("Only " + other_name + " has beaten " + maps_list[i])
             other_i += 5
+            other_beat += 1
 
         else:
             print("Neither player has beaten " + maps_list[i] + " ... git gud")
+            both_fail += 1
 
         i += 1
+
+    print("=====SUMMARY=====")
+    print(str(i))
+    print(my_name + " has beaten " + other_name + "'s times on " + str(my_wins) + " maps")
+    print(my_name + " has beaten " + str(my_beat) + " maps which " + other_name + " has not beat")
+    print(other_name + " has beaten " + my_name + "'s times on " + str(other_wins) + " maps")
+    print(other_name + " has beaten " + str(other_beat) + " maps which " + my_name + " has not beat")
+    print("There are " + str(both_fail) + " maps which neither player has beat")
 
 main()

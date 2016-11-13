@@ -3,8 +3,6 @@
 # given comparison have beaten all of the maps between them.
 
 
-
-#BUGGED: CURRENTLY STICKS COMMAS ON ENDS OF MAP NAMES
 def mapList():
 
     full_times = input("Please enter the times of someone who has beaten all the maps to generate a maplist.")
