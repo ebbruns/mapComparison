@@ -4,7 +4,6 @@
 
 from datetime import datetime
 import fileinput
-import makeMapList
 
 
 def get_times():
