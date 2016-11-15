@@ -39,7 +39,7 @@ def main():
                       'surf_year3000,']
 
     casual_maps_list = ['surf_3,', 'surf_ace_fix,', 'surf_amplitude_encore_nsf_v4,', 'surf_amplitude_light,',
-                        'surf_atlas_1,', 'surf_b_r_o_x_x', 'surf_classics,', 'surf_classics2,', 'surf_colors_beta1,',
+                        'surf_atlas_1,', 'surf_b_r_o_x_x_x,', 'surf_classics,', 'surf_classics2,', 'surf_colors_beta1,',
                         'surf_colours,', 'surf_coralis_ksf-,', 'surf_delusional_,', 'surf_eclipse,', 'surf_elites_v2,',
                         'surf_faint_fix,', 'surf_fruits,', 'surf_furios-,', 'surf_glass7,', 'surf_glass9,',
                         'surf_globalchaos,', 'surf_graphia,', 'surf_grassland,', 'surf_halloween_tf,',
