@@ -1,9 +1,10 @@
-# MapCompare v 0.1
+# MapCompare v 0.2
 # Written by Waves
 # This software is intended to be used to compare map times on CSGO's "Church of Citatsia" surf servers
 
 from datetime import datetime
 import fileinput
+import makeMapList
 
 
 def get_times():
@@ -37,15 +38,16 @@ def main():
                       'surf_trance_ksf,', 'surf_utopia_njv,', 'surf_water-run_banjo_skill,', 'surf_waterworks,',
                       'surf_year3000,']
 
-    casual_maps_list = ['surf_ace_fix,', 'surf_amplitude_encore_nsf_v4,', 'surf_amplitude_light,', 'surf_atlas_1,',
-                        'surf_b_r_o_x_x', 'surf_classics,', 'surf_classics2,', 'surf_colors_beta1,', 'surf_colours,',
-                        'surf_coralis_ksf-,', 'surf_delusional_,', 'surf_eclipse,', 'surf_elites_v2,',
-                        'surf_faint_fix,', 'surf_fruits,', 'surf_furios-,', 'surf_glass7,', 'surf_glass9,', 'surf_globalchaos,',
-                        'surf_graphia,', 'surf_grassland,', 'surf_halloween_tf,', 'surf_happyhands_test,',
-                        'surf_how2surf,', 'surf_hurrr,', 'surf_ing_njv,', 'surf_inspire,', 'surf_island,',
-                        'surf_krow10,', 'surf_kz_protraining,', 'surf_lessons,', 'surf_lore_e,', 'surf_mesa_aether,',
-                        'surf_mesa_mine,', 'surf_neo_njv,', 'surf_network_2008_final,', 'surf_newb_hazard_r1,',
-                        'surf_not_so_sinister,', 'surf_ny_platinum,', 'surf_ny_superhappiest_b3,', 'surf_presmon_fix,',
+    casual_maps_list = ['surf_3,', 'surf_ace_fix,', 'surf_amplitude_encore_nsf_v4,', 'surf_amplitude_light,',
+                        'surf_atlas_1,', 'surf_b_r_o_x_x', 'surf_classics,', 'surf_classics2,', 'surf_colors_beta1,',
+                        'surf_colours,', 'surf_coralis_ksf-,', 'surf_delusional_,', 'surf_eclipse,', 'surf_elites_v2,',
+                        'surf_faint_fix,', 'surf_fruits,', 'surf_furios-,', 'surf_glass7,', 'surf_glass9,',
+                        'surf_globalchaos,', 'surf_graphia,', 'surf_grassland,', 'surf_halloween_tf,',
+                        'surf_happyhands_test,', 'surf_how2surf,', 'surf_hurrr,', 'surf_ing_njv,', 'surf_inspire,',
+                        'surf_island,', 'surf_krow10,', 'surf_kz_protraining,', 'surf_lessons,', 'surf_lore_e,',
+                        'surf_mesa_aether,', 'surf_mesa_mine,', 'surf_neo_njv,', 'surf_network_2008_final,',
+                        'surf_network_2009_njv,', 'surf_networked_,', 'surf_newb_hazard_r1,', 'surf_not_so_sinister,',
+                        'surf_ny_platinum,', 'surf_ny_superhappiest_b3,', 'surf_portal_game4,', 'surf_presmon_fix,',
                         'surf_psycho_njv,', 'surf_rainbow,', 'surf_rookie,', 'surf_simpsons_go_rc2,', 'surf_spacejam,',
                         'surf_sundown_njv,', 'surf_sunnyhappylove,', 'surf_sup_,', 'surf_syria_,', 'surf_tensile_njv,',
                         'surf_tomb_redone,', 'surf_vegetables,', 'surf_waterworks,', 'surf_wood,']
