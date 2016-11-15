@@ -4,9 +4,15 @@
 
 
 def mapList():
-
-    full_times = input("Please enter the times of someone who has beaten all the maps to generate a maplist.")
-    full_list = full_times.split(" ")
+    isDiscord = input("Do you want to copy times from discord or the server?")
+    print("Please enter the times of someone who has beaten all the maps to generate a maplist.")
+    if isDiscord.lower() == "discord":
+        full_times = input()
+    else:
+        sentinel = ''  # ends when this string is seen
+        for line in iter(input, sentinel):
+            full_times = '\n'.join(iter(input, sentinel))
+    full_list = full_times.replace("\n", " ").split(" ")
     maps_list = list()
 
     print(full_list)
