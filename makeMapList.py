@@ -20,3 +20,4 @@ def map_list():
 
     print(maps_list)
 
+map_list()
