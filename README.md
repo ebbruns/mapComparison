@@ -8,7 +8,7 @@ A system for comparing two players' maptime printouts from Church of Citatsia su
 
 If you aren't interested in the code and just want to use this software, it can be run here:
 
-<b> https://repl.it/EYKw/4 </b>
+<b> https://repl.it/EYKw/5 </b>
 
 This link will be maintained to the best of my ability to keep it current with the sourcecode.
 
