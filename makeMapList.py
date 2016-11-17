@@ -13,11 +13,12 @@ def map_list():
         if line == "\n":
             fileinput.close()
             break
-        full_list = full_list + line.replace("\n", " ").split(" ")
+        full_list = full_list + line.replace("\n", " ").replace("\t", " ").replace(":", ",").split(" ")
     for entry in full_list:
         if entry.startswith("surf_"):
             maps_list.append(entry)
 
+    maps_list.sort()
     print(maps_list)
 
 map_list()
